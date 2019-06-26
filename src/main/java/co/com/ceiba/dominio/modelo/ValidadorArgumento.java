@@ -13,9 +13,9 @@ public class ValidadorArgumento {
     }
 	
 	public static void validarTipoVehiculo(Object valor, String mensaje) {
-        if (valor != "MOTO" && valor != "CARRO" ) {
-            throw new ExcepcionTipoVehiculo(mensaje);
-        }
+        //if (valor != "MOTO" && valor != "CARRO" ) {
+          //  throw new ExcepcionTipoVehiculo(mensaje);
+        //}
     }
 	
 
