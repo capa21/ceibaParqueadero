@@ -7,15 +7,16 @@ import java.util.concurrent.ConcurrentHashMap;
 import org.springframework.stereotype.Repository;
 
 import co.com.ceiba.dominio.modelo.RegistroParqueo;
-import co.com.ceiba.dominio.puerto.repositorio.RepositorioRegistroParqueo;
+import co.com.ceiba.dominio.modelo.RegistroParqueo.TipoVehiculo;
+import co.com.ceiba.dominio.puerto.repositorio.IRepositorioRegistroParqueo;
 
 @Repository
-public class RepositorioRegistroParqueoEnMemoria implements RepositorioRegistroParqueo {
+public class RepositorioRegistroParqueoEnMemoria implements IRepositorioRegistroParqueo {
 	private static ConcurrentHashMap<String, RegistroParqueo> registros;
 	
 	static {
 		registros = new ConcurrentHashMap<>();
-		registros.put(UUID.randomUUID().toString(), new RegistroParqueo(1,"CARRO","JCA 101"));
+		registros.put(UUID.randomUUID().toString(), new RegistroParqueo(1,TipoVehiculo.CARRO,"JCA 101"));
 	}
 	
 	@Override

@@ -9,9 +9,13 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 
 public class ComandoRegistroParqueo {
+	public enum TipoVehiculo{
+		CARRO, MOTO
+	}
+	
 	private int id;
 	private String placaVehiculo;
-	private String tipoVehiculo;
+	private TipoVehiculo tipoVehiculo;
 }
 
 

@@ -2,6 +2,7 @@ package co.com.ceiba.dominio.modelo;
 
 import co.com.ceiba.dominio.excepcion.ExcepcionArgumentoObligatorio;
 import co.com.ceiba.dominio.excepcion.ExcepcionTipoVehiculo;
+import co.com.ceiba.dominio.modelo.RegistroParqueo.TipoVehiculo;
 
 public class ValidadorArgumento {
 	private ValidadorArgumento() {}
@@ -13,9 +14,9 @@ public class ValidadorArgumento {
     }
 	
 	public static void validarTipoVehiculo(Object valor, String mensaje) {
-        //if (valor != "MOTO" && valor != "CARRO" ) {
-          //  throw new ExcepcionTipoVehiculo(mensaje);
-        //}
+        if (!(valor instanceof TipoVehiculo)) {
+            throw new ExcepcionTipoVehiculo(mensaje);
+        }
     }
 	
 

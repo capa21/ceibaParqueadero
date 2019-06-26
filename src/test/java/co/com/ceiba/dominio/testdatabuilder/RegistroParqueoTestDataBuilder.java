@@ -1,15 +1,17 @@
 package co.com.ceiba.dominio.testdatabuilder;
 
 import co.com.ceiba.dominio.modelo.RegistroParqueo;
+import co.com.ceiba.dominio.modelo.RegistroParqueo.TipoVehiculo;
 
 public class RegistroParqueoTestDataBuilder {
+	
 	private Integer id;
-    private String tipoVehiculo;
+    private TipoVehiculo tipoVehiculo;
     private String placaVehiculo;
             
     public RegistroParqueoTestDataBuilder() {
     	this.id = 1;
-    	this.tipoVehiculo = "CARRO";
+    	this.tipoVehiculo = TipoVehiculo.CARRO;
     	this.placaVehiculo = "JCA 101";
     }
     
@@ -22,7 +24,7 @@ public class RegistroParqueoTestDataBuilder {
 		return this;
 	}
 
-	public RegistroParqueoTestDataBuilder elVehiculoEs(String tipoVehiculo) {
+	public RegistroParqueoTestDataBuilder elVehiculoEs(TipoVehiculo tipoVehiculo) {
 		this.tipoVehiculo = tipoVehiculo;
 		return this;
 		

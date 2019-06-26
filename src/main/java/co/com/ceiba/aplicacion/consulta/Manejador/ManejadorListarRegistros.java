@@ -5,14 +5,14 @@ import java.util.Collection;
 import org.springframework.stereotype.Component;
 
 import co.com.ceiba.dominio.modelo.RegistroParqueo;
-import co.com.ceiba.dominio.puerto.repositorio.RepositorioRegistroParqueo;
+import co.com.ceiba.dominio.puerto.repositorio.IRepositorioRegistroParqueo;
 
 
 @Component
 public class ManejadorListarRegistros {
-	private final RepositorioRegistroParqueo repositorioRegistroParqueo;
+	private final IRepositorioRegistroParqueo repositorioRegistroParqueo;
 	
-	public ManejadorListarRegistros(RepositorioRegistroParqueo daoRegistroParqueo) {
+	public ManejadorListarRegistros(IRepositorioRegistroParqueo daoRegistroParqueo) {
 		this.repositorioRegistroParqueo = daoRegistroParqueo;
 	}
 	

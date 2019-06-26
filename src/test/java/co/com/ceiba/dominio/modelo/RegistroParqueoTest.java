@@ -24,7 +24,7 @@ public class RegistroParqueoTest {
 	public void validarTipoVehiculo() {
 		//Arrange
 		RegistroParqueoTestDataBuilder registroParqueoTestDataBuilder = new RegistroParqueoTestDataBuilder();
-		registroParqueoTestDataBuilder.elVehiculoEs("TRACTO");
+		registroParqueoTestDataBuilder.elVehiculoEs(null);
 		//Act - Assert
 		BasePrueba.assertThrows(()-> registroParqueoTestDataBuilder.build(), ExcepcionTipoVehiculo.class, "Este parqueadero solo adminte carro y moto");
 	}

@@ -1,13 +1,13 @@
 package co.com.ceiba.dominio.servicio;
 
 import co.com.ceiba.dominio.modelo.RegistroParqueo;
-import co.com.ceiba.dominio.puerto.repositorio.RepositorioRegistroParqueo;
+import co.com.ceiba.dominio.puerto.repositorio.IRepositorioRegistroParqueo;
 
 public class ServicioRegistrarParqueo {
 	
-	private RepositorioRegistroParqueo repositorioRegistroParqueo;
+	private IRepositorioRegistroParqueo repositorioRegistroParqueo;
 	
-	public ServicioRegistrarParqueo(RepositorioRegistroParqueo repositorioRegistroParqueo) {
+	public ServicioRegistrarParqueo(IRepositorioRegistroParqueo repositorioRegistroParqueo) {
 		this.repositorioRegistroParqueo = repositorioRegistroParqueo;
 	}
 	
