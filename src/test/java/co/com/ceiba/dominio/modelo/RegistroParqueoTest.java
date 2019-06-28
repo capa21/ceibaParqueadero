@@ -17,7 +17,7 @@ public class RegistroParqueoTest {
 		RegistroParqueoTestDataBuilder registroParqueoTestDataBuilder = new RegistroParqueoTestDataBuilder();
 		registroParqueoTestDataBuilder.conPlaca(null);
 		//Act - Assert
-		BasePrueba.assertThrows(()-> registroParqueoTestDataBuilder.build(), ExcepcionArgumentoObligatorio.class, "La placa del vehículo es un dato obligaorio");
+		BasePrueba.assertThrows(()-> registroParqueoTestDataBuilder.build(), ExcepcionArgumentoObligatorio.class, "La placa del vehiculo es un dato obligatorio");
 	}
 	
 	@Test
@@ -26,7 +26,7 @@ public class RegistroParqueoTest {
 		RegistroParqueoTestDataBuilder registroParqueoTestDataBuilder = new RegistroParqueoTestDataBuilder();
 		registroParqueoTestDataBuilder.elVehiculoEs(null);
 		//Act - Assert
-		BasePrueba.assertThrows(()-> registroParqueoTestDataBuilder.build(), ExcepcionTipoVehiculo.class, "Este parqueadero solo adminte carro y moto");
+		BasePrueba.assertThrows(()-> registroParqueoTestDataBuilder.build(), ExcepcionTipoVehiculo.class, "Este parqueadero solo admite carro y moto");
 	}
 	
 		

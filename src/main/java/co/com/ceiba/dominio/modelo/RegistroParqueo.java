@@ -8,7 +8,7 @@ public class RegistroParqueo {
 	}
 	
 	private static final String LA_PLACA_ES_UN_DATO_OBLIGATORIO = "La placa del vehiculo es un dato obligatorio";
-	private static final String TIPO_VEHICULO_VALIDO = "Este parqueadero solo adminte carro y moto";
+	private static final String TIPO_VEHICULO_VALIDO = "Este parqueadero solo admite carro y moto";
 	
 	private Integer id;
     private TipoVehiculo tipoVehiculo;
