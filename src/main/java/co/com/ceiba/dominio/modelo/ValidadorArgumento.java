@@ -5,7 +5,7 @@ import co.com.ceiba.dominio.excepcion.ExcepcionTipoVehiculo;
 import co.com.ceiba.dominio.modelo.RegistroParqueo.TipoVehiculo;
 
 public class ValidadorArgumento {
-	private ValidadorArgumento() {}
+private ValidadorArgumento() {}
 	
 	public static void validarObligatorio(Object valor, String mensaje) {
         if (valor == null) {

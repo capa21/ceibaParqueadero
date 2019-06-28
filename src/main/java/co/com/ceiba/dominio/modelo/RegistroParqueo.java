@@ -1,6 +1,7 @@
 package co.com.ceiba.dominio.modelo;
 
 public class RegistroParqueo {
+	
 	public enum TipoVehiculo {
 		CARRO,
 		MOTO;
@@ -11,6 +12,8 @@ public class RegistroParqueo {
 	
 	private Integer id;
     private TipoVehiculo tipoVehiculo;
+	//private String tipoVehiculo;
+	
     private String placaVehiculo;
     
     public RegistroParqueo(Integer id, TipoVehiculo tipoVehiculo, String placaVehiculo) {
