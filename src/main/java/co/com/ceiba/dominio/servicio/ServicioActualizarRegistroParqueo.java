@@ -42,7 +42,7 @@ public class ServicioActualizarRegistroParqueo {
 	public float calcularCobroParqueo(RegistroParqueo registroParqueo) {
 		float valorACobrar = 0;
 		if (registroParqueo.getTipoVehiculo().esTipo("MOTO")) {
-			valorACobrar = new ServicioCobroParqueoMoto(registroParqueo).calcularCobroParqueo(registroParqueo);
+			valorACobrar = new ServicioCobroParqueoMoto(registroParqueo).calcularCobroParqueo (registroParqueo);
 		}
 		if (registroParqueo.getTipoVehiculo().esTipo("CARRO")) {
 			valorACobrar = new ServicioCobroParqueoCarro().calcularCobroParqueo(registroParqueo);

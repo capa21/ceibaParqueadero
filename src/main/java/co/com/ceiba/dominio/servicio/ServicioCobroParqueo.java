@@ -11,49 +11,43 @@ public abstract class ServicioCobroParqueo {
 	
 	public float calcularCobroParqueo(RegistroParqueo registroParqueo) {
 		this.registroParqueo = registroParqueo;
-		long tiempoParqueo = registroParqueo.getFechaEntrada().getTime() - registroParqueo.getFechaSalida().getTime();
+		long tiempoParqueo = registroParqueo.getFechaSalida().getTime() - registroParqueo.getFechaEntrada().getTime();
 		
-		long numeroDiasACobrar = this.numeroDiasACobrar(tiempoParqueo);
-		long numeroHorasACobrar = this.numeroHorasACobrar(tiempoParqueo);
+		long numeroDiasACobrar = this.datosCobro(tiempoParqueo)[0];
+		long numeroHorasACobrar = this.datosCobro(tiempoParqueo)[1];
 		
 		return this.calcularCobro(numeroDiasACobrar,numeroHorasACobrar);
 	}
 
-	protected long numeroHorasACobrar(long tiempoParqueo) {
+	protected long[] datosCobro(long tiempoParqueo) {
+		
+		long[] datosCobro = new long[2];
 		long minutos = TimeUnit.MILLISECONDS.toMinutes(tiempoParqueo);
-		long horasACobrar = this.numeroHoras(tiempoParqueo) - (this.numeroDias(tiempoParqueo)* 24);
+		tiempoParqueo = this.numeroHoras(tiempoParqueo);
+		long diasACobrar = (tiempoParqueo / 24);
+		long horasACobrar = (tiempoParqueo - (diasACobrar* 24));
 		
 		if(minutos % 60 > 0) {
 			horasACobrar++;
 		}
 		
 		if (horasACobrar >= HORAS_COBRO_POR_DIAS) {
+			diasACobrar ++;
 			horasACobrar = 0;
 		}
 		
-		if (horasACobrar == 0 && this.numeroDias(tiempoParqueo) == 0) {
+		if (horasACobrar == 0 && diasACobrar == 0) {
 			horasACobrar = 1;
 		}
-				
-		return horasACobrar;
-	}
-
-	protected long numeroDiasACobrar(long tiempoParqueo) {
-		long diasACobrar = this.numeroDias(tiempoParqueo);
 		
-		if (this.numeroHorasACobrar(tiempoParqueo) >= HORAS_COBRO_POR_DIAS) {
-			diasACobrar++;
-		}
-				
-		return diasACobrar;
+		datosCobro[0] = diasACobrar;
+		datosCobro[1] = horasACobrar;
+		
+		return datosCobro;
 	}
 
 	private long numeroHoras(long tiempoParqueo) {
 		return TimeUnit.MILLISECONDS.toHours(tiempoParqueo);
-	}
-
-	private long numeroDias(long tiempoParqueo) {
-		return this.numeroHoras(tiempoParqueo) / 24 ;
 	}
 
 	protected abstract float calcularCobro(long numeroDiasACobrar, long numeroHorasACobrar);

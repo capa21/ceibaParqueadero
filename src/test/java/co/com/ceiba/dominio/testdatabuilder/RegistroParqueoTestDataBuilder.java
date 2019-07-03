@@ -29,6 +29,31 @@ public class RegistroParqueoTestDataBuilder {
 		return this;
 	}
 	
+	public RegistroParqueoTestDataBuilder conFechaEntrada(Date fechaEntrada) {
+		this.fechaEntrada = fechaEntrada;
+		return this;
+	}
+	
+	public RegistroParqueoTestDataBuilder conFechaSalida(Date fechaEntrada) {
+		this.fechaEntrada = fechaEntrada;
+		return this;
+	}
+	
+	public RegistroParqueoTestDataBuilder conPrecio(float precio) {
+		this.precio = precio;
+		return this;
+	}
+	
+	public RegistroParqueoTestDataBuilder conEstado(boolean estado) {
+		this.estado = estado;
+		return this;
+	}
+	
+	public RegistroParqueoTestDataBuilder concilindraje(String cilindraje) {
+		this.cilindraje = cilindraje;
+		return this;
+	}
+		
 	public RegistroParqueo build(){
 		RegistroParqueo registroParqueo = new RegistroParqueo();
 		registroParqueo.setId(id);
