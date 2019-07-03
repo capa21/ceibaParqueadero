@@ -9,25 +9,25 @@ import co.com.ceiba.dominio.excepcion.ExcepcionTipoVehiculo;
 
 import co.com.ceiba.dominio.testdatabuilder.RegistroParqueoTestDataBuilder;
 
-
 public class RegistroParqueoTest {
 	@Test
 	public void validarPlacaObligatoria() {
-		//Arrange
+		// Arrange
 		RegistroParqueoTestDataBuilder registroParqueoTestDataBuilder = new RegistroParqueoTestDataBuilder();
 		registroParqueoTestDataBuilder.conPlaca(null);
-		//Act - Assert
-		BasePrueba.assertThrows(()-> registroParqueoTestDataBuilder.build(), ExcepcionArgumentoObligatorio.class, "La placa del vehiculo es un dato obligatorio");
+		// Act - Assert
+		BasePrueba.assertThrows(() -> registroParqueoTestDataBuilder.build(), ExcepcionArgumentoObligatorio.class,
+				"La placa del vehiculo es un dato obligatorio");
 	}
-	
+
 	@Test
 	public void validarTipoVehiculo() {
-		//Arrange
+		// Arrange
 		RegistroParqueoTestDataBuilder registroParqueoTestDataBuilder = new RegistroParqueoTestDataBuilder();
 		registroParqueoTestDataBuilder.elVehiculoEs(null);
-		//Act - Assert
-		BasePrueba.assertThrows(()-> registroParqueoTestDataBuilder.build(), ExcepcionTipoVehiculo.class, "Este parqueadero solo admite carro y moto");
+		// Act - Assert
+		BasePrueba.assertThrows(() -> registroParqueoTestDataBuilder.build(), ExcepcionTipoVehiculo.class,
+				"Este parqueadero solo admite carro y moto");
 	}
-	
-		
+
 }

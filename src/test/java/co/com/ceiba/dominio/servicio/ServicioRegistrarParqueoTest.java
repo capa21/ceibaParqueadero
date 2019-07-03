@@ -9,7 +9,5 @@ import co.com.ceiba.dominio.puerto.repositorio.IRepositorioRegistroParqueo;
 import co.com.ceiba.dominio.testdatabuilder.RegistroParqueoTestDataBuilder;
 
 public class ServicioRegistrarParqueoTest {
-	
-	
 
 }

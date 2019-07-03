@@ -3,20 +3,18 @@ package co.com.ceiba.aplicacion.comando;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
+import lombok.Setter;
+import co.com.ceiba.dominio.modelo.TipoVehiculo; 
 
-@Getter
+
 @AllArgsConstructor
 @NoArgsConstructor
+@Getter
+@Setter
 
 public class ComandoRegistroParqueo {
-	public enum TipoVehiculo{
-		CARRO, MOTO
-	}
-	
-	private int id;
+	private Long id;
 	private String placaVehiculo;
 	private TipoVehiculo tipoVehiculo;
+	private String cilindraje;
 }
-
-
-
