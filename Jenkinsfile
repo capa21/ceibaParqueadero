@@ -20,7 +20,7 @@ pipeline{
 		}
 		
 		environment {
-        PROJECT_PATH_BACK = 'ceibaParqueadero'
+        PROJECT_PATH_BACK = './'
 		}
 		parameters{
 			booleanParam defaultValue: false, description: 'Push a registry AWS', name: 'pushdeploy'
@@ -31,7 +31,7 @@ pipeline{
 			stage('Checkout') {
 				steps {
                 echo '------------>Checkout desde Git Microservicio<------------'
-                checkout([$class: 'GitSCM', branches: [[name: 'master']], doGenerateSubmoduleConfigurations: false, extensions: [[$class: 'RelativeTargetDirectory', relativeTargetDir: 'ceibaParqueadero']], gitTool: 'Git_Centos', submoduleCfg: [], userRemoteConfigs: [[credentialsId: '7fe28495-6f45-4577-8c7b-dce727e78f14', url: 'https://github.com/capa21/ceibaParqueadero.git']]])
+                checkout([$class: 'GitSCM', branches: [[name: 'master']], doGenerateSubmoduleConfigurations: false, extensions: [[$class: 'RelativeTargetDirectory', relativeTargetDir: 'ceibaParqueadero']], gitTool: 'Git_Centos', submoduleCfg: [], userRemoteConfigs: [[credentialsId: 'JesusCabezaGitHub', url: 'https://github.com/capa21/ceibaParqueadero.git']]])
 				}
 			}
 		
