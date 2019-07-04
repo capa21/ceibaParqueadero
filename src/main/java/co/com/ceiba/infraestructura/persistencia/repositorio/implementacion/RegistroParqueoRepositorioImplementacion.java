@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 import co.com.ceiba.aplicacion.consulta.ConsultaRegistrosParqueoActivos;
+import co.com.ceiba.dominio.excepcion.ExcepcionVehiculoNoEstaEnElParqueadero;
 import co.com.ceiba.dominio.modelo.RegistroParqueo;
 import co.com.ceiba.dominio.puerto.repositorio.IRepositorioRegistroParqueo;
 import co.com.ceiba.infraestructura.persistencia.modelo.RegistroParqueoModelo;
@@ -16,6 +17,7 @@ import co.com.ceiba.infraestructura.persistencia.repositorio.jpa.IRegistroParque
 @Component
 public class RegistroParqueoRepositorioImplementacion implements IRepositorioRegistroParqueo {
 	
+	private static final String VEHICULO_NO_DENTRO = "Este vehiculo no se encuentra en el parqueadero";
 	private static final RegistroParqueoMapper mapper = RegistroParqueoMapper.getInstance();
 	
 	@Autowired
@@ -47,6 +49,9 @@ public class RegistroParqueoRepositorioImplementacion implements IRepositorioReg
 	@Override
 	public RegistroParqueo registroDeVehiculo(String placaVehiculo) {
 		RegistroParqueoModelo modelo = jpa.buscarPorPlacaVehiculo(placaVehiculo);
+		if(modelo == null) {
+			throw new ExcepcionVehiculoNoEstaEnElParqueadero(VEHICULO_NO_DENTRO);
+		}
 		return mapper.haciaDomino(modelo);
 	}
 
