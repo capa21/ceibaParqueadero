@@ -45,7 +45,7 @@ public class RegistroParqueoRepositorioImplementacion implements IRepositorioReg
 		RegistroParqueoModelo modelo = jpa.buscarPorPlacaVehiculo(placaVehiculo);
 		return modelo != null;
 	}
-
+	
 	@Override
 	public RegistroParqueo registroDeVehiculo(String placaVehiculo) {
 		RegistroParqueoModelo modelo = jpa.buscarPorPlacaVehiculo(placaVehiculo);
@@ -63,6 +63,12 @@ public class RegistroParqueoRepositorioImplementacion implements IRepositorioReg
 	@Override
 	public long cantidadMotosEnElParqueadero() {
 		return jpa.contarMotosActivas();
+	}
+
+	@Override
+	public RegistroParqueo registrarSalida(RegistroParqueo registro) {
+		RegistroParqueoModelo modelo = mapper.haciaModelo(registro);
+		return mapper.haciaDomino(jpa.save(modelo));
 	}
 	
 }

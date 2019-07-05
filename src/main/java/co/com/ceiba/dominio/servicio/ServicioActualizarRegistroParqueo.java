@@ -28,6 +28,7 @@ public class ServicioActualizarRegistroParqueo {
 		registroParqueo.setEstado(false);
 		registroParqueo.setFechaSalida(Calendar.getInstance().getTime());
 		registroParqueo.setPrecio(this.calcularCobroParqueo(registroParqueo));
+		this.repositorioRegistroParqueo.registrarSalida(registroParqueo);
 		return this.calcularCobroParqueo(registroParqueo);
 	}
 

@@ -20,4 +20,6 @@ public interface IRepositorioRegistroParqueo {
 	
 	public long cantidadCarrosEnElParqueadero();
 	
+	public RegistroParqueo registrarSalida(RegistroParqueo registroParqueo);
+	
 }
