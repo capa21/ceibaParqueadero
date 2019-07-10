@@ -12,6 +12,9 @@ import co.com.ceiba.dominio.puerto.repositorio.IRepositorioRegistroParqueo;
 
 public class ServicioRegistrarParqueo {
 	
+	private static final String MOTO = "MOTO";
+	private static final String CARRO = "CARRO";
+
 	private IRepositorioRegistroParqueo repositorioRegistroParqueo;
 	
 	private static final String INGRESO_NO_PERMITIDO = "Solo puede ingresar domingo y lunes";
@@ -46,10 +49,10 @@ public class ServicioRegistrarParqueo {
 	}
 
 	private void validarParqueaderoLleno(TipoVehiculo tipoVehiculo) {
-		if(tipoVehiculo.esTipo("MOTO") && this.repositorioRegistroParqueo.cantidadMotosEnElParqueadero() == CAPACIDAD_MAXIMA_MOTOS) {
+		if(tipoVehiculo.esTipo(MOTO) && this.repositorioRegistroParqueo.cantidadMotosEnElParqueadero() == CAPACIDAD_MAXIMA_MOTOS) {
 			throw new ExcepcionParqueaderoLleno(NO_HAY_CUPO_PARA_MOTOS);
 		}
-		if(tipoVehiculo.esTipo("CARRO") && this.repositorioRegistroParqueo.cantidadCarrosEnElParqueadero() == CAPACIDAD_MAXIMA_CARROS) {
+		if(tipoVehiculo.esTipo(CARRO) && this.repositorioRegistroParqueo.cantidadCarrosEnElParqueadero() == CAPACIDAD_MAXIMA_CARROS) {
 			throw new ExcepcionParqueaderoLleno(NO_HAY_CUPO_PARA_CARROS);
 		}
 	}

@@ -19,13 +19,13 @@ public abstract class ServicioCobroParqueo {
 		return this.calcularCobro(numeroDiasACobrar,numeroHorasACobrar);
 	}
 
-	protected long[] datosCobro(long tiempoParqueo) {
+	private long[] datosCobro(long tiempoParqueo) {
 		
 		long[] datosCobro = new long[2];
 		long minutos = TimeUnit.MILLISECONDS.toMinutes(tiempoParqueo);
-		tiempoParqueo = this.numeroHoras(tiempoParqueo);
-		long diasACobrar = (tiempoParqueo / 24);
-		long horasACobrar = (tiempoParqueo - (diasACobrar* 24));
+		long tiempoParqueoHoras = this.numeroHoras(tiempoParqueo);
+		long diasACobrar = (tiempoParqueoHoras / 24);
+		long horasACobrar = (tiempoParqueoHoras - (diasACobrar* 24));
 		
 		if(minutos % 60 > 0) {
 			horasACobrar++;
