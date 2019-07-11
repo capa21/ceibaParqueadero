@@ -1,14 +1,6 @@
 package co.com.ceiba.dominio.servicio;
 
-import co.com.ceiba.dominio.modelo.RegistroParqueo;
-
 public class ServicioCobroParqueoMoto extends ServicioCobroParqueo {
-	private RegistroParqueo registroParqueo;
-	
-	public ServicioCobroParqueoMoto(RegistroParqueo registroParqueo) {
-		this.registroParqueo = registroParqueo;
-	}
-
 	private static final float PRECIO_HORA = 500;
 	private static final float PRECIO_DIA = 4000;
 	private static final float PRECIO_EXTRA = 2000;
