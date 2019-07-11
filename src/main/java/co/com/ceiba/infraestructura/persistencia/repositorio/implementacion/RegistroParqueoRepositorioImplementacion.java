@@ -69,7 +69,7 @@ public class RegistroParqueoRepositorioImplementacion implements IRepositorioReg
 	public RegistroParqueo registrarSalida(RegistroParqueo registro) {
 		//RegistroParqueoModelo modelo = mapper.haciaModelo(registro);
 		//return mapper.haciaDomino(jpa.save(modelo));
-		return	this.registrarParqueo(registro);
+		return this.registrarParqueo(registro);
 	}
 	
 }
