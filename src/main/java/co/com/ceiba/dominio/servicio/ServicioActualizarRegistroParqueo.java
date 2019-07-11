@@ -5,8 +5,6 @@ import org.springframework.stereotype.Component;
 
 import co.com.ceiba.dominio.modelo.ValidadorArgumento;
 import co.com.ceiba.dominio.modelo.RegistroParqueo;
-import co.com.ceiba.dominio.servicio.ServicioCobroParqueoCarro;
-import co.com.ceiba.dominio.servicio.ServicioCobroParqueoMoto;
 import co.com.ceiba.dominio.excepcion.ExcepcionVehiculoNoEstaEnElParqueadero;
 import co.com.ceiba.dominio.puerto.repositorio.IRepositorioRegistroParqueo;
 

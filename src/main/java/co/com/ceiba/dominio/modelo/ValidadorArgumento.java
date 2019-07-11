@@ -3,7 +3,7 @@ package co.com.ceiba.dominio.modelo;
 import co.com.ceiba.dominio.excepcion.ExcepcionArgumentoObligatorio;
 import co.com.ceiba.dominio.excepcion.ExcepcionTipoVehiculo;
 
-public class ValidadorArgumento {
+public final class ValidadorArgumento {
 	private ValidadorArgumento() {
 	}
 

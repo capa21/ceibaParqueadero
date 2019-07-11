@@ -14,6 +14,7 @@ public enum TipoVehiculo {
         return this.tipo.equals(otroTipo);
     }
 
+    @Override
     public String toString() {
        return this.tipo;
     }
